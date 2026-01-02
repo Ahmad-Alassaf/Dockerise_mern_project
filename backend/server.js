@@ -1,7 +1,7 @@
 const express=require("express")
 const colors=require("colors");
-
-const port =process.env.PORT||4000
+const path=require('path')
+const dotenv=require('dotenv').config({path:path.resolve(__dirname,'../.env')})
 const app=express();
-app.get('/',(req,res)=>res.send(`<h1>Hello!</></br><p>Server running on Port:${port}</br> NODE_ENV ${process.env.NODE_ENV}</p>`))
-app.listen(port,()=>console.log(`App running on Port: ${port}`.green.underline))
+app.get('/',(req,res)=>res.send(`<h1>Hello!</></br><p>Server running on Port:${process.env.PORT}</br> NODE_ENV ${process.env.NODE_ENV}</p>`))
+app.listen(process.env.PORT,()=>console.log(`App running on Port: ${process.env.PORT}`.green.underline))
