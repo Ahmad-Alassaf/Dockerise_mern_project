@@ -2,7 +2,7 @@ version: '3'
 services:
   backend:    
     volumes:
-      - ./backend/server.js:/backend/server.js:ro     
+      - ./backend:/backend:ro     
     environment:      
       - NODE_ENV=development
   frontend:   
