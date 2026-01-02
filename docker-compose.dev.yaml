@@ -1,10 +1,19 @@
 version: '3'
 services:
-  backend:    
+  backend:
+    build:
+      context: ./backend
+      args:
+        - NODE_ENV=development
     volumes:
       - ./backend:/backend:ro     
     environment:      
       - NODE_ENV=development
-  frontend:   
+    command: npm run server-dev
+  frontend:
+    build:
+      context: ./frontend      
+      args:
+        - NODE_ENV=development
     environment:      
       - NODE_ENV=development

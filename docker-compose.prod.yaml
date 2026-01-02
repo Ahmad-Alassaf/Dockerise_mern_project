@@ -1,8 +1,17 @@
 version: '3'
 services:
-  backend:    
+  backend:
+    build:
+      context: ./backend    
+      args:
+        - NODE_ENV=production
     environment:      
       - NODE_ENV=production
-  frontend:   
+    command: npm run server-prod
+  frontend:
+    build:
+      context: ./frontend      
+      args:
+        - NODE_ENV=production
     environment:      
       - NODE_ENV=production
