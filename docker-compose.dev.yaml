@@ -3,8 +3,7 @@ services:
   backend:
     build:
       context: ./backend
-      args:
-        - NODE_ENV=development
+      target: development
     volumes:
       - ./backend:/backend:ro     
     environment:      
@@ -13,7 +12,6 @@ services:
   frontend:
     build:
       context: ./frontend      
-      args:
-        - NODE_ENV=development
+      target: development
     environment:      
       - NODE_ENV=development
