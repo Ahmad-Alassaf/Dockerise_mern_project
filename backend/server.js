@@ -9,11 +9,9 @@ const connectDataBase=async()=>{
       const conn=await  mongoose.connect(process.env.MONGOOSE_URI)
       console.log(`Server connected with Data Base :${conn.connection.host}`.cyan.underline)
         collections = await conn.connection.db.listCollections().toArray();
-        
     } catch (error) {
         console.log(error.message)
         process.exit(1)
-        
     }
 }
 // Connect to Database
